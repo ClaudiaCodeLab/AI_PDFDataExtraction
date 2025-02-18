@@ -14,6 +14,40 @@ st.set_page_config(
 st.header('Solicitud de Préstamo Bancario')
 
 st.subheader('Extracción de Datos por LLM')
+st.markdown("### Ejemplos de fichas de cliente para probar")
+st.markdown("Descarga alguno de estos ejemplos para probar la aplicación:")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    with open("Ficha de cliente - Francisco.pdf", "rb") as file:
+        st.download_button(
+            label="Francisco.pdf",
+            data=file,
+            file_name="Ficha de cliente - Francisco.pdf",
+            mime="application/pdf"
+        )
+
+with col2:
+    with open("Ficha de cliente - Joan.pdf", "rb") as file:
+        st.download_button(
+            label="Joan.pdf", 
+            data=file,
+            file_name="Ficha de cliente - Joan.pdf",
+            mime="application/pdf"
+        )
+
+with col3:
+    with open("Ficha de cliente - María.pdf", "rb") as file:
+        st.download_button(
+            label="María.pdf",
+            data=file,
+            file_name="Ficha de cliente - María.pdf", 
+            mime="application/pdf"
+        )
+
+st.markdown("---")
+
 
 profile_file = st.file_uploader("Sube un archivo en PDF para extraer la información del cliente", type=["pdf"])
 
